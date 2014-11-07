@@ -46,5 +46,5 @@ production:
   encoding: unicode
   database: center_production
   pool: 5
-  username: postgres
-  password: password
+  username: ariadna
+  password: madmaxdx
