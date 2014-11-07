@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :services
 
-  get 'contacts' => 'services#contacts', :as => contacts
+  get 'contacts' => 'services#contacts', :as => :contacts
 
   root 'services#home'
   # The priority is based upon order of creation: first created -> highest priority.
