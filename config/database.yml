@@ -45,6 +45,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: center_production
+  host: localhost
   pool: 5
   username: ariadna
   password: madmaxdx
