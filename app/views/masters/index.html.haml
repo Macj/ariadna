@@ -1,0 +1,26 @@
+%h1 Мастера
+
+- if user_signed_in?
+  = link_to 'Новая запись', new_master_path
+
+%table
+  %tr
+    %th
+    %th ФИО
+    %th Заслуги
+    %th
+    %th
+    %th
+
+  - @masters.each do |master|
+    %tr
+      %td
+        %a{:href => master_path(master)}
+          %img{ :src => master.photo(:thumb)}
+      %td= master.fio
+      %td= master.deserts
+      - if user_signed_in?
+        %td= link_to 'Изменить', edit_master_path(master)
+        %td= link_to 'Удалить', master, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br

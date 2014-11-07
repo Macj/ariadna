@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Center</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script>tinymce.init({selector:'textarea',
+    plugins : 'code textcolor advlist autolink link image lists charmap print preview'
+  });</script>
+</head>
+<body>
+
+<div id="header" class="left_stepup">
+  <div class="logo" ><a href="/"><img src="/images/logo.png" ></a></div>
+  <div class="logo_text right_stepup">Клуб Ариадна <br/> путь к гармонии и счастью... </div>
+</div>
+<div >
+  <% if current_user %>
+    <strong><%= current_user.login %></strong>, Добрро пожаловать!
+    <%= link_to "Выйти", destroy_user_session_path, :method => :delete  %>
+  <% end %>
+</div>
+
+<div id="topmenu" class="left_stepup">
+  <ul>
+    <li><a href="/comments"> Коментарии </a></li>
+    <li><a href="/events"> События </a></li>
+    <li><a href="/masters"> Мастера </a></li>
+    <li><a href="/services"> Услуги </a></li>
+    <li><a href="/alboms"> Альбомы </a></li>
+    </ul>
+</div>
+
+<div id="content" class="left_stepup">
+  <%= yield %>
+</div>
+
+<%- unless controller_name == "events" && action_name == "index" %>
+  <div id="stand">
+    <div class="header_one">
+      <h3>Афиша</h3>
+    </div>
+    <%- @events_list.each do |event| %>
+      <div class="event">
+        <div class="event_img"><img src="<%= event.photo.url(:thumb) %>" /></div>
+        <div class="event_name"><%= event.name %></div>
+        <div class="event_date"><%= event.when %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+</body>
+</html>

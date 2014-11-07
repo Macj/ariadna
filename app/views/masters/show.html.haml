@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %img{:src => @master.photo(:medium)}
+%p
+  %b Fio:
+  = @master.fio
+%p
+  %b Deserts:
+  = @master.deserts
+
+- if user_signed_in?
+  = link_to 'Edit', edit_master_path(@master)
+  \|
+= link_to 'Back', masters_path

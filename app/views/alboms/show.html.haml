@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @albom.title
+%p
+  %b When:
+  = @albom.when
+
+= link_to 'Edit', edit_albom_path(@albom)
+\|
+= link_to 'Back', alboms_path

@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %img{ :src => @service.photo(:medium)}
+%p
+  %b Название:
+  = @service.title
+%p
+  %b Описание:
+  = @service.description.html_safe
+
+- if user_signed_in?
+  = link_to 'Изменить', edit_service_path(@service)
+  \|
+= link_to 'К списку', services_path

@@ -1,0 +1,21 @@
+%h1 Фото галерея
+- if user_signed_in?
+  = link_to 'Новый альбом', new_albom_path
+
+%table
+  %tr
+    %th Название
+    %th Дата создания
+    %th
+    %th
+    %th
+
+  - @alboms.each do |albom|
+    %tr
+      %td
+        %a{:href => albom_path(albom) }
+          = albom.title
+      %td= albom.when
+      - if user_signed_in?
+        %td= link_to 'Редактировать', edit_albom_path(albom)
+        %td= link_to 'Удалить', albom, :method => :delete, :data => { :confirm => 'Уверены?' }

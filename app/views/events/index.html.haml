@@ -1,0 +1,28 @@
+%h1 События
+= link_to('Создать событие', new_event_path) if current_user
+
+%table
+  %tr
+    %th
+    %th Название
+    %th Дата проведения
+    %th
+    %th
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td 
+        %a{:href => event_path(event)}
+          %img{:src => event.photo(:thumb)}
+      %td
+        %a{:href => event_path(event)}
+          = event.name
+      %td= event.when
+      - if user_signed_in?
+        %td= link_to 'Редактировать', edit_event_path(event)
+        %td= link_to 'Удалить', event, :method => :delete, :data => { :confirm => 'Уверены?' }
+    %tr
+      %td{:colspan => 5}= event.description.html_safe
+
+%br

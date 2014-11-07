@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %img{:src => @event.photo(:medium)}
+%p
+  %b 
+    = @event.name
+%p
+  %b Начало в:
+  = @event.when
+%p
+  %b Описание:
+  = @event.description.html_safe
+
+- if user_signed_in?
+  = link_to 'Изменить', edit_event_path(@event)
+  \|
+= link_to 'К списку', events_path

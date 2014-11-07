@@ -1,0 +1,26 @@
+%h1 Услуги
+- if user_signed_in?
+  = link_to 'Новая услуга', new_service_path
+
+%table
+  %tr
+    %th 
+    %th Название
+    %th 
+    %th
+    %th
+    %th
+
+  - @services.each do |service|
+    %tr
+      %td
+        %a{:href => service_path(service)}
+          %img{ :src => service.photo(:thumb)}
+      %td= service.title
+      - if user_signed_in?
+        %td= link_to 'Edit', edit_service_path(service)
+        %td= link_to 'Destroy', service, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %tr
+      %td
+      %td= service.description
+
