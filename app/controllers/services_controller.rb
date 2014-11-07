@@ -7,6 +7,9 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
+  def home
+  end
+
   # GET /services/1
   # GET /services/1.json
   def show
