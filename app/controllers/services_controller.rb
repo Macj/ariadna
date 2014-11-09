@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :show, :home, :contacts]
+  before_filter :authenticate_user!, :except => [:index, :show, :home, :contacts, :about]
   # GET /services
   # GET /services.json
   def index
@@ -8,6 +8,9 @@ class ServicesController < ApplicationController
   end
 
   def home
+  end
+
+  def about
   end
 
   # GET /services/1
