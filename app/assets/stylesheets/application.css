@@ -15,7 +15,9 @@
  */
  body {
   background: url("/images/send.jpg") repeat scroll left top;
+  margin: 0px;
  }
+
 .left_stepup{
 padding-left: 5%;
 }
@@ -26,8 +28,11 @@ margin-right: 5%;
 
 #header {
   height: 250px;
-  background: url(/images/head_line.png) repeat-x; // #cbc6a6;
-  //border: blue solid 1px;
+  background-image: url("/images/head_line.png");
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: contain;
+  height: 250px;
 }
 
 .logo {
