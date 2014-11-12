@@ -10,8 +10,6 @@ class ServicesController < ApplicationController
   def home
   end
 
-  def about
-  end
 
   # GET /services/1
   # GET /services/1.json

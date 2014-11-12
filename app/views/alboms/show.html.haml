@@ -7,6 +7,12 @@
   %b When:
   = @albom.when
 
+.gallery
+  - @albom.pictures.each do |photo| 
+    = link_to image_tag(photo.image(:medium)),
+                  photo.image(:full),
+                  class: 'fancybox', rel: 'group',  alt: 'Photo' 
+
 = link_to 'Edit', edit_albom_path(@albom)
 \|
 = link_to 'Back', alboms_path

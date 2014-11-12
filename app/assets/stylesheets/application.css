@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require fancybox
  */
+
+
  body {
   background: url("/images/send.jpg") repeat scroll left top;
   margin: 0px;

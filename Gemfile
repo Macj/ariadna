@@ -30,7 +30,9 @@ gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 
- gem "paperclip"
+gem "paperclip"
+
+gem 'fancybox-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

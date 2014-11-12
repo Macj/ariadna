@@ -28,6 +28,11 @@ class AlbomsController < ApplicationController
 
     respond_to do |format|
       if @albom.save
+        if params[:images]
+          params[:images].each { |image|
+            @albom.pictures.create(image: image)
+          }
+        end
         format.html { redirect_to @albom, notice: 'Albom was successfully created.' }
         format.json { render :show, status: :created, location: @albom }
       else
