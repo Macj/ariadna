@@ -92,7 +92,7 @@ text-indent: 1.5em;
 
 #content {
 float: left;
-width: auto;
+width: 65%;
 //border: red solid 1px;
 margin-right: 15px;
 }
