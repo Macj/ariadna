@@ -16,11 +16,16 @@
       %td
         %a{:href => service_path(service)}
           %img{ :src => service.photo(:thumb)}
-      %td= service.title
+      %td
+        %a{:href => service_path(service)}
+          = service.title
       - if user_signed_in?
         %td= link_to 'Edit', edit_service_path(service)
         %td= link_to 'Destroy', service, :method => :delete, :data => { :confirm => 'Are you sure?' }
     %tr
       %td
-      %td= service.description
+      %td
+        = strip_tags(service.description)[0..150] 
+        %a{:href => service_path(service)}
+          = "..."
 
