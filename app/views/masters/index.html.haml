@@ -8,12 +8,14 @@
     .master
       .master_img.mar_20
         %a{:href => master_path(master)}
-          %img{ :src => master.photo(:thumb)}
+          %img{ :src => master.photo(:medium)}
       .master_block.mar_20
         .master_fio.mar_20
-          = master.fio
+          %b
+            = master.fio
         .master_info.mar_20  
-          = master.deserts
+          %i
+            = master.deserts
       - if user_signed_in?
         .buttons
           = link_to 'Изменить', edit_master_path(master), :class => " button dark_grey"
