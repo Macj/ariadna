@@ -19,4 +19,4 @@
       %td= comment.service_id
       %td= comment.body
       - if user_signed_in?
-        %td= link_to 'Удалить', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Удалить', comment, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "buttons dsgnmoo"

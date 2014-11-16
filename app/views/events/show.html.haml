@@ -1,18 +1,19 @@
 %p#notice= notice
 
-%p
-  %img{:src => @event.photo(:medium)}
-%p
-  %b 
-    = @event.name
-%p
-  %b Начало в:
-  = @event.when
-%p
-  %b Описание:
-  = @event.description.html_safe
+.event
+  .event_img.mar_20
+    %img{:src => @event.photo(:medium)}
+  .event_block.mar_20
+    .event_name.mar_20
+      = @event.name
+    .event_when.mar_20
+      Начало в:
+      = @event.when.strftime("%d-%m-%Y %H:%M")
+  .event_desc.mar_20 
+    %h2{:style => "text-align: center"}
+      Афиша
+    = @event.description.html_safe
 
 - if user_signed_in?
-  = link_to 'Изменить', edit_event_path(@event)
-  \|
-= link_to 'К списку', events_path
+  = link_to 'Изменить', edit_event_path(@event), :class => "button"
+= link_to 'К списку', events_path, :class => "button"

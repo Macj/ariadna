@@ -5,14 +5,14 @@
   = @albom.title
 %p
   %b When:
-  = @albom.when
+  = @albom.when.strftime("%d-%m-%Y %H:%M")
 
 .gallery
   - @albom.pictures.each do |photo| 
-    = link_to image_tag(photo.image(:medium)),
+    .my_pic
+      = link_to image_tag(photo.image(:medium)),
                   photo.image(:full),
                   class: 'fancybox', rel: 'group',  alt: 'Photo' 
-
-= link_to 'Edit', edit_albom_path(@albom)
-\|
-= link_to 'Back', alboms_path
+.buttons{:style => "clear:left"}
+  = link_to 'Изменить', edit_albom_path(@albom),:class => "button"
+  = link_to 'К списку', alboms_path,:class => "button"

@@ -1,3 +1,32 @@
+.events{
+  
+}
+.events .event{
+  margin-top: 20px;
+}
+
+
+.events .event .buttons{
+  float:left;
+}
+.events .event_block{
+  float:left;
+}
+
+.events .event_img{
+  float:left;
+  width:30%
+}
+
+.events .event_desc{
+  float:left;
+}
+
+.events .event_when{
+  float:left;
+  clear:left;
+}
+
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

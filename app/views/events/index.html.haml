@@ -1,11 +1,11 @@
 %h1 События
-= link_to('Создать событие', new_event_path) if current_user
+= link_to('Создать событие', new_event_path, :class => "button") if current_user
 
 %table
   %tr
     %th
-    %th Название
-    %th Дата проведения
+    %th 
+    %th 
     %th
     %th
     %th
@@ -18,10 +18,10 @@
       %td
         %a{:href => event_path(event)}
           = event.name
-      %td= event.when
+      %td= event.when.strftime("%d-%m-%Y %H:%M")
       - if user_signed_in?
-        %td= link_to 'Редактировать', edit_event_path(event)
-        %td= link_to 'Удалить', event, :method => :delete, :data => { :confirm => 'Уверены?' }
+        %td= link_to 'Редактировать', edit_event_path(event), :class => "button dark_grey"
+        %td= link_to 'Удалить', event, :method => :delete, :data => { :confirm => 'Уверены?' }, :class => "button dsgnmoo"
     %tr
       %td{:colspan => 5}= event.description.html_safe
 

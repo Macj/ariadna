@@ -1,0 +1,16 @@
+.gallery{
+  width: 900px;
+}
+
+.my_pic{
+  width: 270px;
+  height:270px;
+  float:left;
+  margin:10px;
+//  border: #E2A76F solid 2px;
+  text-align: center;
+}
+ a img{
+  height: 100%;
+//  border: #E2A76F solid 3px;
+}

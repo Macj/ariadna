@@ -3,24 +3,18 @@
 - if user_signed_in?
   = link_to 'Новая запись', new_master_path
 
-%table
-  %tr
-    %th
-    %th ФИО
-    %th Заслуги
-    %th
-    %th
-    %th
-
+.masters
   - @masters.each do |master|
-    %tr
-      %td
+    .master
+      .master_img.mar_20
         %a{:href => master_path(master)}
           %img{ :src => master.photo(:thumb)}
-      %td= master.fio
-      %td= master.deserts
+      .master_block.mar_20
+        .master_fio.mar_20
+          = master.fio
+        .master_info.mar_20  
+          = master.deserts
       - if user_signed_in?
-        %td= link_to 'Изменить', edit_master_path(master)
-        %td= link_to 'Удалить', master, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+        .buttons
+          = link_to 'Изменить', edit_master_path(master), :class => " button dark_grey"
+          = link_to 'Удалить', master, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "button dsgnmoo"

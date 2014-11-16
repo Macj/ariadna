@@ -12,8 +12,11 @@
 <body>
 
 <div id="header" class="left_stepup">
+  <%-# "<div class="logo" ><a href="/"><img src="/images/logo.png" ></a></div>"%>
+  <div class="logo_text right_stepup"><font class="small">Клуб</font> &laquo;Ариадна&raquo;<br/>
+    <font class="small right_stepup"><br/> путь к гармонии и счастью... </font>
+  </div>
   <div class="logo" ><a href="/"><img src="/images/logo.png" ></a></div>
-  <div class="logo_text right_stepup">Клуб Ариадна <br/> путь к гармонии и счастью... </div>
 </div>
 <div >
   <% if current_user %>
@@ -45,9 +48,11 @@
     </div>
     <%- @events_list.each do |event| %>
       <div class="event">
-        <div class="event_img"><img src="<%= event.photo.url(:thumb) %>" /></div>
-        <div class="event_name"><%= event.name %></div>
-        <div class="event_date"><%= event.when %></div>
+        <div class="event_img">
+          <a href="<%= event_path(event)%>">
+          <img src="<%= event.photo.url(:medium) %>" /></a></div>
+        <div class="event_name"><a href="<%= event_path(event)%>"><%= event.name %></a></div>
+        <div class="event_date"><%= event.when.strftime("%d-%m-%Y %H:%M") %></div>
       </div>
     <% end %>
   </div>

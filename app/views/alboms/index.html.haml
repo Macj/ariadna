@@ -15,7 +15,7 @@
       %td
         %a{:href => albom_path(albom) }
           = albom.title
-      %td= albom.when
+      %td= albom.when.strftime("%d-%m-%Y %H:%M")
       - if user_signed_in?
-        %td= link_to 'Редактировать', edit_albom_path(albom)
-        %td= link_to 'Удалить', albom, :method => :delete, :data => { :confirm => 'Уверены?' }
+        %td= link_to 'Редактировать', edit_albom_path(albom), :class => "button dark_grey"
+        %td= link_to 'Удалить', albom, :method => :delete, :data => { :confirm => 'Уверены?' }, :class => "button dsgnmoo"

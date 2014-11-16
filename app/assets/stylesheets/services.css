@@ -1,0 +1,36 @@
+// Place all the styles related to the Services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.services{
+  
+}
+.service{
+  margin-top: 20px;
+}
+
+
+.service .buttons a{
+
+  
+}
+
+.mar_20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.service_img{
+  float:left;
+}
+
+.service_name{
+  float:left;
+}
+
+
+.service_desc{
+  clear: left;
+}

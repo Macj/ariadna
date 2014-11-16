@@ -1,31 +1,21 @@
 %h1 Услуги
 - if user_signed_in?
-  = link_to 'Новая услуга', new_service_path
+  = link_to 'Новая услуга', new_service_path, :class => " button dark_grey"
 
-%table
-  %tr
-    %th 
-    %th Название
-    %th 
-    %th
-    %th
-    %th
-
+.services
   - @services.each do |service|
-    %tr
-      %td
+    .service
+      .service_img.mar_20 
         %a{:href => service_path(service)}
           %img{ :src => service.photo(:thumb)}
-      %td
+      .service_name.mar_20 
         %a{:href => service_path(service)}
           = service.title
       - if user_signed_in?
-        %td= link_to 'Edit', edit_service_path(service)
-        %td= link_to 'Destroy', service, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    %tr
-      %td
-      %td
+        .buttons
+          = link_to 'Редактировать', edit_service_path(service), :class => " button dark_grey"
+          = link_to 'Удалить', service, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "button dsgnmoo"
+      .service_desc.mar_20 
         = strip_tags(service.description)[0..150] 
         %a{:href => service_path(service)}
           = "..."
-
