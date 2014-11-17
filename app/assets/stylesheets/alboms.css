@@ -10,7 +10,9 @@
 //  border: #E2A76F solid 2px;
   text-align: center;
 }
- a img{
-  height: 100%;
+ .my_pic a img{
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
 //  border: #E2A76F solid 3px;
 }
