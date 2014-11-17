@@ -16,6 +16,6 @@
           = link_to 'Редактировать', edit_service_path(service), :class => " button dark_grey"
           = link_to 'Удалить', service, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "button dsgnmoo"
       .service_desc.mar_20 
-        = strip_tags(service.description)[0..150] 
+        = strip_tags(service.description)[0..150].html_safe
         %a{:href => service_path(service)}
           = "..."
