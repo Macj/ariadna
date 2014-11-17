@@ -43,13 +43,14 @@ margin-right: 5%;
   background-image: url("/images/head_line.jpg");
   background-position: 0 0;
 //  background-repeat: repeat-x;
-  background-size: contain;
+  background-size: auto 250px ;
   height: 250px;
+ // position:absolute;
 }
 
 .logo {
   height: 100%;
-  width: 200px;
+  width: 15%;
   float: right;
   margin-right: 90px;
 }
@@ -119,7 +120,7 @@ table td {
 
 #stand{
 float: right;
-width: 324px;
+width: 20%;
 height: 200px;
 //border: green solid 1px;
 }
