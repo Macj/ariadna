@@ -112,9 +112,10 @@ float: left;
 width: 65%;
 //border: red solid 1px;
 margin-right: 15px;
+margin-bottom: 40px;
 }
 
-table td {
+table.list td {
   text-align: center;
 }
 

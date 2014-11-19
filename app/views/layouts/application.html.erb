@@ -13,9 +13,9 @@
 
 <div id="header" class="left_stepup">
   <%-# "<div class="logo" ><a href="/"><img src="/images/logo.png" ></a></div>"%>
-  <div class="logo_text "><font class="small">Клуб</font> &laquo;Ариадна&raquo;<br/>
-    <font class="small "><br/> путь к гармонии и счастью... </font>
-  </div>
+  <div class="logo_text "><i><font class="small">Клуб</font> &laquo;АриАднА&raquo;<br/>
+    <font class="small " ><br/><br/> путь к гармонии и счастью... </font>
+  </i></div>
   <div class="logo" ><a href="/"><img src="/images/logo.png" ></a></div>
 </div>
 <div >
@@ -32,6 +32,7 @@
     <li><a href="/masters"> Мастера </a></li>
     <li><a href="/events"> События </a></li>
     <li><a href="/alboms"> Альбомы </a></li>
+    <li><a href="/articles"> Статьи </a></li>
     <li><a href="/contacts"> Контакты </a></li>
     <li><a href="/comments"> Отзывы </a></li>
     </ul>
@@ -46,14 +47,20 @@
     <div class="header_one">
       <h3>Афиша</h3>
     </div>
-    <%- @events_list.each do |event| %>
-      <div class="event">
-        <div class="event_img">
-          <a href="<%= event_path(event)%>">
-          <img src="<%= event.photo.url(:medium) %>" /></a></div>
-        <div class="event_name"><a href="<%= event_path(event)%>"><%= event.name %></a></div>
-        <div class="event_date"><%= event.when.strftime("%d-%m-%Y %H:%M") %></div>
-      </div>
+    <%-if !@events_list.empty? %>
+      <%- @events_list.each do |event| %>
+        <div class="event">
+          <div class="event_img">
+            <a href="<%= event_path(event)%>">
+            <img src="<%= event.photo.url(:medium) %>" /></a></div>
+          <div class="event_name"><a href="<%= event_path(event)%>"><%= event.name %></a></div>
+          <div class="event_date"><%= event.when.strftime("%d-%m-%Y %H:%M") %></div>
+        </div>
+      <% end %>
+    <%- else %>
+      Событий в ближайшее время нет.
+      <br\>
+      <b>Мы работаем над этим!</b>
     <% end %>
   </div>
 <% end %>

@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %img{:src => @article.photo(:medium)}
+%p
+  %b 
+    = @article.name
+%p
+  %b 
+    = @article.desc.html_safe
+
+- if user_signed_in?
+  = link_to 'Изменить', edit_article_path(@article), :class => "button"
+= link_to 'К списку', articles_path, :class => "button"

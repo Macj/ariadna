@@ -1,0 +1,26 @@
+%h1 Статьи
+
+- if user_signed_in?
+  = link_to 'Новыя статья', new_article_path
+
+.masters
+  - @articles.each do |article|
+    .master
+      .master_img.mar_20
+        %a{:href => article_path(article)}
+          %img{ :src => article.photo(:medium)}
+      .master_block.mar_20
+        .master_fio.mar_20
+          %b
+            %a{:href => article_path(article)}
+              = article.name
+        .master_info.mar_20{:style => "width: 300px"}
+          %i
+            = article.short_desc.html_safe
+      - if user_signed_in?
+        .buttons
+          = link_to 'Изменить', edit_article_path(article), :class => " button dark_grey"
+          = link_to 'Удалить', article, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "button dsgnmoo"
+
+
+

@@ -1,0 +1,48 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.articles{
+  
+}
+.article{
+  margin-top: 20px;
+  height:200px;
+  width:100%;
+}
+
+
+.article .buttons{
+  float:left;
+}
+.article_block{
+  float:left;
+}
+
+.article_img{
+  float:left;
+  height:200px;
+  width:200px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.article_img a img{
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.article_fio{
+  float:left;
+}
+
+.article_info{
+  float:left;
+  clear:left;
+}
+
+.short_desc{
+  width:300px;
+  height: 150px;
+}

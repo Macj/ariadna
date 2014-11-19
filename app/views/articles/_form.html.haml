@@ -1,0 +1,22 @@
+= form_for @article, :html => { :multipart => true } do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label "Название"
+    = f.text_field :name
+  .field
+    = f.label "Краткое описание"
+    = f.text_field :short_desc, :maxlength => 150
+  .field
+    = f.label "Статья"
+    = f.text_area :desc
+  .field
+    = f.label "Фото"
+    = f.file_field :photo
+  .actions
+    = f.submit 'Сохранить'
