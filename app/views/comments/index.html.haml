@@ -25,6 +25,6 @@
     %tr
       %td{:colspan => 2}
         %div{:style => "padding-left: 30px"}
-          = comment.body
+          = comment.body.html_safe
       - if user_signed_in?
         %td= link_to 'Удалить', comment, :method => :delete, :data => { :confirm => 'Вы уверены?' }, :class => "buttons dsgnmoo"
