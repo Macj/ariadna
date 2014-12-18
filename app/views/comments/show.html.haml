@@ -8,7 +8,7 @@
   = @comment.serviceюtitle
 %p
   %b Body:
-  = @comment.body
+  = @comment.body.html_safe
 
 = link_to 'Редактировать', edit_comment_path(@comment), :class => "button"
 = link_to 'К списку', comments_path, :class => "button"
